@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Painel do Barbeiro | Gestão de Agendamentos</title>
   
   <!-- Tailwind CSS CDN -->
@@ -45,12 +45,12 @@
 
   <!-- 1. TELA DE LOGIN -->
   <div id="loginScreen" class="min-h-screen flex items-center justify-center px-4">
-    <div class="bg-dark-card border border-dark-border rounded-2xl p-8 max-w-md w-full shadow-2xl">
-      <div class="text-center mb-8">
+    <div class="bg-dark-card border border-dark-border rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl">
+      <div class="text-center mb-6 sm:mb-8">
         <div class="w-12 h-12 rounded-xl bg-brand/10 border border-brand/30 flex items-center justify-center text-brand text-xl mx-auto mb-3">
           <i class="fa-solid fa-lock"></i>
         </div>
-        <h1 class="vintage-font text-2xl font-bold text-white uppercase leading-none">PAINEL ADMINISTRATIVO</h1>
+        <h1 class="vintage-font text-xl sm:text-2xl font-bold text-white uppercase leading-none">PAINEL ADMINISTRATIVO</h1>
         <p class="text-xs text-gray-400 mt-1">Acesso Restrito ao Barbeiro</p>
       </div>
 
@@ -71,8 +71,8 @@
       </form>
 
       <div class="mt-6 text-center">
-        <a href="index.html" class="text-xs text-gray-500 hover:text-brand transition">
-          <i class="fa-solid fa-arrow-left text-[10px] mr-1"></i> Voltar para o site
+        <a href="index.html" class="text-xs text-gray-500 hover:text-brand transition inline-flex items-center gap-1.5">
+          <i class="fa-solid fa-arrow-left text-[10px]"></i> Voltar para o site
         </a>
       </div>
     </div>
@@ -80,58 +80,59 @@
 
   <!-- 2. PAINEL DE GESTÃO -->
   <div id="adminPanel" class="hidden">
-    <header class="bg-dark-card border-b border-dark-border px-6 py-4 sticky top-0 z-50">
-      <div class="max-w-7xl mx-auto flex justify-between items-center">
-        <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-brand/10 border border-brand/30 flex items-center justify-center text-brand text-lg">
+    <!-- Navbar Header Mobile/Desktop -->
+    <header class="bg-dark-card border-b border-dark-border px-4 sm:px-6 py-3.5 sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto flex justify-between items-center gap-2">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-brand/10 border border-brand/30 flex items-center justify-center text-brand text-base shrink-0">
             <i class="fa-solid fa-scissors"></i>
           </div>
           <div>
-            <h1 class="vintage-font text-lg font-bold text-white uppercase leading-none">PAINEL DO BARBEIRO</h1>
-            <span class="text-[10px] text-brand uppercase tracking-widest block mt-0.5" id="userEmailDisplay">Conectado</span>
+            <h1 class="vintage-font text-base sm:text-lg font-bold text-white uppercase leading-none">PAINEL DO BARBEIRO</h1>
+            <span class="text-[9px] sm:text-[10px] text-brand uppercase tracking-widest block mt-0.5 truncate max-w-[150px] sm:max-w-xs" id="userEmailDisplay">Conectado</span>
           </div>
         </div>
-        <div class="flex items-center gap-3">
-          <a href="index.html" class="text-xs text-gray-400 hover:text-brand transition flex items-center gap-1.5 py-2 px-3 rounded-lg border border-dark-border hover:border-brand/40">
-            <i class="fa-solid fa-arrow-left text-[10px]"></i> Ver Site
+        <div class="flex items-center gap-2">
+          <a href="index.html" class="text-[11px] text-gray-400 hover:text-brand transition py-1.5 px-2.5 rounded-lg border border-dark-border hover:border-brand/40 hidden sm:inline-flex items-center gap-1">
+            <i class="fa-solid fa-arrow-left text-[9px]"></i> Site
           </a>
-          <button onclick="carregarAgendamentos()" class="bg-dark-surface hover:bg-dark-border border border-dark-border text-white px-3 py-2 rounded-lg text-xs font-semibold uppercase tracking-wider transition flex items-center gap-2">
-            <i class="fa-solid fa-arrows-rotate"></i> Atualizar
+          <button onclick="carregarAgendamentos()" class="bg-dark-surface hover:bg-dark-border border border-dark-border text-white px-2.5 py-1.5 rounded-lg text-xs font-semibold transition flex items-center gap-1.5" title="Atualizar">
+            <i class="fa-solid fa-arrows-rotate text-xs"></i> <span class="hidden sm:inline">Atualizar</span>
           </button>
-          <button onclick="handleLogout()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 px-3 py-2 rounded-lg text-xs font-bold uppercase tracking-wider transition flex items-center gap-1.5">
-            <i class="fa-solid fa-right-from-bracket"></i> Sair
+          <button onclick="handleLogout()" class="bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/30 px-2.5 py-1.5 rounded-lg text-xs font-bold uppercase transition flex items-center gap-1" title="Sair">
+            <i class="fa-solid fa-right-from-bracket text-xs"></i> <span class="hidden sm:inline">Sair</span>
           </button>
         </div>
       </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
+    <main class="max-w-7xl mx-auto px-3 sm:px-6 py-4 sm:py-6 space-y-4 sm:space-y-6">
       
-      <!-- Métricas -->
-      <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
-        <div class="bg-dark-card border border-dark-border p-4 rounded-xl">
-          <span class="text-xs text-gray-400 uppercase font-semibold block">Total Agendamentos</span>
-          <span id="metricTotal" class="vintage-font text-2xl font-bold text-white mt-1 block">0</span>
+      <!-- Cards de Métricas em Grid 2x2 no Celular -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4">
+        <div class="bg-dark-card border border-dark-border p-3 sm:p-4 rounded-xl">
+          <span class="text-[10px] sm:text-xs text-gray-400 uppercase font-semibold block">Total</span>
+          <span id="metricTotal" class="vintage-font text-xl sm:text-2xl font-bold text-white mt-0.5 block">0</span>
         </div>
-        <div class="bg-dark-card border border-dark-border p-4 rounded-xl">
-          <span class="text-xs text-yellow-400 uppercase font-semibold block">Pendentes</span>
-          <span id="metricPendentes" class="vintage-font text-2xl font-bold text-yellow-400 mt-1 block">0</span>
+        <div class="bg-dark-card border border-dark-border p-3 sm:p-4 rounded-xl">
+          <span class="text-[10px] sm:text-xs text-yellow-400 uppercase font-semibold block">Pendentes</span>
+          <span id="metricPendentes" class="vintage-font text-xl sm:text-2xl font-bold text-yellow-400 mt-0.5 block">0</span>
         </div>
-        <div class="bg-dark-card border border-dark-border p-4 rounded-xl">
-          <span class="text-xs text-emerald-400 uppercase font-semibold block">Confirmados</span>
-          <span id="metricConfirmados" class="vintage-font text-2xl font-bold text-emerald-400 mt-1 block">0</span>
+        <div class="bg-dark-card border border-dark-border p-3 sm:p-4 rounded-xl">
+          <span class="text-[10px] sm:text-xs text-emerald-400 uppercase font-semibold block">Confirmados</span>
+          <span id="metricConfirmados" class="vintage-font text-xl sm:text-2xl font-bold text-emerald-400 mt-0.5 block">0</span>
         </div>
-        <div class="bg-dark-card border border-dark-border p-4 rounded-xl">
-          <span class="text-xs text-brand uppercase font-semibold block">Faturamento Previsto</span>
-          <span id="metricFaturamento" class="vintage-font text-2xl font-bold text-brand mt-1 block">R$ 0,00</span>
+        <div class="bg-dark-card border border-dark-border p-3 sm:p-4 rounded-xl">
+          <span class="text-[10px] sm:text-xs text-brand uppercase font-semibold block">Faturamento</span>
+          <span id="metricFaturamento" class="vintage-font text-lg sm:text-2xl font-bold text-brand mt-0.5 block">R$ 0,00</span>
         </div>
       </div>
 
-      <!-- Filtros -->
-      <div class="bg-dark-card border border-dark-border rounded-xl p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <div class="flex items-center gap-3 w-full sm:w-auto">
-          <span class="text-xs uppercase font-bold text-gray-400">Filtrar por Status:</span>
-          <select id="statusFilter" onchange="filtrarTabela()" class="bg-dark-surface border border-dark-border rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-brand">
+      <!-- Barra de Filtros e Status -->
+      <div class="bg-dark-card border border-dark-border rounded-xl p-3 sm:p-4 flex flex-row justify-between items-center gap-2">
+        <div class="flex items-center gap-2 w-full sm:w-auto">
+          <span class="text-[11px] sm:text-xs uppercase font-bold text-gray-400 shrink-0">Filtrar:</span>
+          <select id="statusFilter" onchange="filtrarTabela()" class="w-full sm:w-auto bg-dark-surface border border-dark-border rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-brand">
             <option value="todos">Todos</option>
             <option value="pendente">Pendentes</option>
             <option value="confirmado">Confirmados</option>
@@ -139,14 +140,22 @@
             <option value="cancelado">Cancelados</option>
           </select>
         </div>
-        <div class="text-xs text-gray-400 flex items-center gap-2">
+        <div class="text-[10px] sm:text-xs text-gray-400 shrink-0 flex items-center gap-1.5">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          Conectado ao Supabase
+          <span class="hidden sm:inline">Conectado ao Supabase</span>
         </div>
       </div>
 
-      <!-- Tabela -->
-      <div class="bg-dark-card border border-dark-border rounded-2xl overflow-hidden shadow-2xl">
+      <!-- VISÃO MOBILE: Cards Otimizados para Celular (md:hidden) -->
+      <div id="mobileCardsContainer" class="block md:hidden space-y-3">
+        <div class="py-10 text-center text-gray-500">
+          <i class="fa-solid fa-circle-notch fa-spin text-brand text-lg mb-2 block"></i>
+          Carregando...
+        </div>
+      </div>
+
+      <!-- VISÃO DESKTOP: Tabela Tradicional (hidden md:block) -->
+      <div class="hidden md:block bg-dark-card border border-dark-border rounded-2xl overflow-hidden shadow-2xl">
         <div class="overflow-x-auto">
           <table class="w-full text-left text-sm text-gray-300">
             <thead class="bg-dark-surface text-xs uppercase tracking-wider text-gray-400 border-b border-dark-border">
@@ -175,7 +184,7 @@
   </div>
 
   <script>
-    // --- CREDENCIAIS REAIS DO SEU PROJETO SUPABASE ---
+    // --- CREDENCIAIS REAIS DO SUPABASE ---
     const SUPABASE_URL = "https://jdwcncjutafxmeswdnci.supabase.co";
     const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impkd2NuY2p1dGFmeG1lc3dkbmNpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcwMDM2MzAsImV4cCI6MjEwMjU3OTYzMH0.v0rlWhCqKB3zQ6DSRvLz4ninRMfyYqoVYDd5BUjJAl8";
 
@@ -184,7 +193,7 @@
 
     document.addEventListener("DOMContentLoaded", checkSession);
 
-    // 1. Verifica Sessão Ativa
+    // 1. Checa Sessão
     async function checkSession() {
       const loginScreen = document.getElementById("loginScreen");
       const adminPanel = document.getElementById("adminPanel");
@@ -235,14 +244,10 @@
     // 4. Carregar Agendamentos
     async function carregarAgendamentos() {
       const tbody = document.getElementById("appointmentsTableBody");
-      tbody.innerHTML = `
-        <tr>
-          <td colspan="6" class="py-12 text-center text-gray-500">
-            <i class="fa-solid fa-circle-notch fa-spin text-brand text-xl mb-2 block"></i>
-            Atualizando lista...
-          </td>
-        </tr>
-      `;
+      const mobileContainer = document.getElementById("mobileCardsContainer");
+
+      tbody.innerHTML = `<tr><td colspan="6" class="py-12 text-center text-gray-500"><i class="fa-solid fa-circle-notch fa-spin text-brand text-xl mb-2 block"></i>Atualizando lista...</td></tr>`;
+      mobileContainer.innerHTML = `<div class="py-10 text-center text-gray-500"><i class="fa-solid fa-circle-notch fa-spin text-brand text-lg mb-2 block"></i>Atualizando lista...</div>`;
 
       const { data, error } = await supabaseClient
         .from('agendamentos')
@@ -251,7 +256,8 @@
         .order('hora_agendamento', { ascending: true });
 
       if (error) {
-        tbody.innerHTML = `<tr><td colspan="6" class="py-8 text-center text-red-400">Erro ao consultar banco: ${error.message}</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="6" class="py-8 text-center text-red-400">Erro: ${error.message}</td></tr>`;
+        mobileContainer.innerHTML = `<div class="py-6 text-center text-red-400 text-xs">Erro: ${error.message}</div>`;
         return;
       }
 
@@ -273,10 +279,11 @@
       document.getElementById("metricFaturamento").innerText = `R$ ${totalFaturamento.toFixed(2).replace('.', ',')}`;
     }
 
-    // 6. Filtrar e Renderizar Tabela
+    // 6. Filtrar e Renderizar (Mobile e Desktop)
     function filtrarTabela() {
       const filter = document.getElementById("statusFilter").value;
       const tbody = document.getElementById("appointmentsTableBody");
+      const mobileContainer = document.getElementById("mobileCardsContainer");
 
       const listaFiltrada = filter === 'todos' 
         ? agendamentosCache 
@@ -284,19 +291,21 @@
 
       if (listaFiltrada.length === 0) {
         tbody.innerHTML = `<tr><td colspan="6" class="py-10 text-center text-gray-500">Nenhum agendamento encontrado.</td></tr>`;
+        mobileContainer.innerHTML = `<div class="p-6 bg-dark-card border border-dark-border rounded-xl text-center text-gray-500 text-xs">Nenhum agendamento encontrado.</div>`;
         return;
       }
 
+      const statusColors = {
+        pendente: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30',
+        confirmado: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
+        concluido: 'bg-blue-500/10 text-blue-400 border-blue-500/30',
+        cancelado: 'bg-red-500/10 text-red-400 border-red-500/30'
+      };
+
+      // RENDERIZAÇÃO DESKTOP (TABELA)
       tbody.innerHTML = listaFiltrada.map(item => {
         const phoneClean = (item.cliente_telefone || '').replace(/\D/g, '');
         const zapLink = `https://wa.me/55${phoneClean}?text=${encodeURIComponent('Olá ' + item.cliente_nome + ', confirmamos o seu agendamento para ' + formatarData(item.data_agendamento) + ' às ' + item.hora_agendamento + '!')}`;
-
-        const statusColors = {
-          pendente: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30',
-          confirmado: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
-          concluido: 'bg-blue-500/10 text-blue-400 border-blue-500/30',
-          cancelado: 'bg-red-500/10 text-red-400 border-red-500/30'
-        };
 
         return `
           <tr class="hover:bg-dark-surface/50 transition">
@@ -326,11 +335,61 @@
               </select>
             </td>
             <td class="py-4 px-6 text-center">
-              <button onclick="deletarAgendamento(${item.id})" class="text-gray-500 hover:text-red-400 transition p-2" title="Excluir agendamento">
+              <button onclick="deletarAgendamento(${item.id})" class="text-gray-500 hover:text-red-400 transition p-2" title="Excluir">
                 <i class="fa-solid fa-trash-can"></i>
               </button>
             </td>
           </tr>
+        `;
+      }).join('');
+
+      // RENDERIZAÇÃO MOBILE (CARDS INDIVIDUAIS COMPLETOS)
+      mobileContainer.innerHTML = listaFiltrada.map(item => {
+        const phoneClean = (item.cliente_telefone || '').replace(/\D/g, '');
+        const zapLink = `https://wa.me/55${phoneClean}?text=${encodeURIComponent('Olá ' + item.cliente_nome + ', confirmamos o seu agendamento para ' + formatarData(item.data_agendamento) + ' às ' + item.hora_agendamento + '!')}`;
+
+        return `
+          <div class="bg-dark-card border border-dark-border p-4 rounded-xl space-y-3">
+            <div class="flex justify-between items-start">
+              <div>
+                <h4 class="font-bold text-white text-sm">${item.cliente_nome}</h4>
+                <a href="${zapLink}" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-emerald-400 font-medium mt-0.5">
+                  <i class="fa-brands fa-whatsapp"></i> ${item.cliente_telefone}
+                </a>
+              </div>
+              <span class="vintage-font text-base font-bold text-brand shrink-0">
+                R$ ${parseFloat(item.valor).toFixed(2).replace('.', ',')}
+              </span>
+            </div>
+
+            <div class="p-2.5 bg-dark-surface rounded-lg text-xs space-y-1">
+              <div class="flex justify-between text-gray-300">
+                <span class="text-gray-400"><i class="fa-regular fa-calendar text-brand mr-1"></i> Data:</span>
+                <strong class="text-white">${formatarData(item.data_agendamento)} às ${item.hora_agendamento}</strong>
+              </div>
+              <div class="flex justify-between text-gray-300">
+                <span class="text-gray-400"><i class="fa-solid fa-user-tie text-brand mr-1"></i> Barbeiro:</span>
+                <span>${item.barbeiro}</span>
+              </div>
+              <div class="text-gray-400 pt-1 border-t border-dark-border/60">
+                <span class="text-[11px]">${item.servicos}</span>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between gap-2 pt-1">
+              <div class="w-full">
+                <select onchange="atualizarStatus(${item.id}, this.value)" class="w-full bg-dark-surface border border-dark-border text-xs rounded-lg px-2.5 py-2 font-semibold focus:outline-none ${statusColors[item.status] || ''}">
+                  <option value="pendente" ${item.status === 'pendente' ? 'selected' : ''}>Pendente</option>
+                  <option value="confirmado" ${item.status === 'confirmado' ? 'selected' : ''}>Confirmado</option>
+                  <option value="concluido" ${item.status === 'concluido' ? 'selected' : ''}>Concluído</option>
+                  <option value="cancelado" ${item.status === 'cancelado' ? 'selected' : ''}>Cancelado</option>
+                </select>
+              </div>
+              <button onclick="deletarAgendamento(${item.id})" class="p-2 bg-dark-surface border border-dark-border text-gray-400 hover:text-red-400 rounded-lg shrink-0 transition" title="Excluir">
+                <i class="fa-solid fa-trash-can text-sm"></i>
+              </button>
+            </div>
+          </div>
         `;
       }).join('');
     }
