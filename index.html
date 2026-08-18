@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sua Barbearia | Agendamento Online & Gestão</title>
+    <title>Barbearia Premium | Demonstração de Agendamento Online</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,7 +13,7 @@
                 extend: {
                     colors: {
                         brand: {
-                            DEFAULT: '#C6934B', // Cor de destaque primária
+                            DEFAULT: '#C6934B',
                             hover: '#AE7E3A',
                             light: '#E2B878',
                             dark: '#875B22'
@@ -37,11 +37,12 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=Playfair+Display:ital,wght@1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         .vintage-font { font-family: 'Cinzel', serif; }
+        .script-font { font-family: 'Playfair Display', serif; }
 
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -67,9 +68,9 @@
                 </div>
                 <div>
                     <div class="vintage-font text-xl sm:text-2xl font-bold tracking-wider text-white uppercase leading-none">
-                        NOME DA <span class="text-brand">BARBEARIA</span>
+                        BARBEARIA <span class="text-brand">DEMO</span>
                     </div>
-                    <span class="text-[10px] uppercase tracking-[0.25em] text-gray-400 font-semibold block mt-0.5">Barbearia Premium • Agendamento Online</span>
+                    <span class="text-[10px] uppercase tracking-[0.25em] text-gray-400 font-semibold block mt-0.5">Modelo de Demonstração • Agendamento Online</span>
                 </div>
             </a>
 
@@ -79,7 +80,7 @@
                 <a href="#agendamento" class="text-brand font-bold hover:underline transition">Agendar Online</a>
                 <a href="#galeria" class="hover:text-brand transition">Galeria</a>
                 <a href="#localizacao" class="hover:text-brand transition">Localização</a>
-                <a href="admin.html" target="_blank" class="text-gray-500 hover:text-brand text-[11px]"><i class="fa-solid fa-lock text-xs"></i> Painel Admin</a>
+                <a href="admin.html" class="text-gray-500 hover:text-brand text-[11px]"><i class="fa-solid fa-lock text-xs"></i> Painel Admin</a>
             </nav>
 
             <a href="#agendamento" class="hidden sm:inline-flex items-center gap-2 bg-brand hover:bg-brand-hover text-black px-6 py-2.5 rounded-lg font-bold uppercase tracking-wider text-xs transition transform hover:-translate-y-0.5 shadow-lg shadow-brand/15">
@@ -95,9 +96,8 @@
         </div>
 
         <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
-            
             <div data-aos="fade-down" class="inline-flex items-center gap-2 px-5 py-1.5 rounded-full border border-brand/40 bg-brand/10 text-brand text-xs uppercase tracking-[0.2em] font-bold mb-6">
-                <i class="fa-solid fa-crown text-xs"></i> Tradição & Estilo • Atendimento Personalizado
+                <i class="fa-solid fa-crown text-xs"></i> Sistema de Agendamento para Barbearias
             </div>
             
             <h1 data-aos="fade-up" data-aos-delay="100" class="vintage-font text-4xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-tight text-white mb-4 leading-tight">
@@ -105,37 +105,17 @@
             </h1>
             
             <p data-aos="fade-up" data-aos-delay="200" class="text-gray-300 text-sm sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-                Agendamento 100% online sem filas. Escolha seu barbeiro, data e horário ideal em poucos cliques.
+                Agendamento 100% online sem filas. Escolha seu profissional, dia e horário ideal em poucos cliques.
             </p>
 
             <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#agendamento" class="inline-flex items-center justify-center gap-3 bg-brand hover:bg-brand-hover text-black px-8 py-4 rounded-xl font-bold uppercase tracking-wider text-xs shadow-xl shadow-brand/20 transition transform hover:-translate-y-1">
-                    <i class="fa-solid fa-calendar-days text-sm"></i> Agendar Agora
+                    <i class="fa-solid fa-calendar-days text-sm"></i> Fazer Agendamento de Teste
                 </a>
-                <a href="#servicos" class="inline-flex items-center justify-center gap-2 border border-dark-border hover:border-brand/50 bg-dark-card/80 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold uppercase tracking-wider text-xs transition">
-                    Ver Serviços
+                <a href="admin.html" class="inline-flex items-center justify-center gap-2 border border-dark-border hover:border-brand/50 bg-dark-card/80 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold uppercase tracking-wider text-xs transition">
+                    Ver Painel do Barbeiro
                 </a>
             </div>
-
-            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto text-left sm:text-center pt-8 border-t border-dark-border">
-                <div class="p-3 bg-dark-card/60 rounded-lg border border-dark-border">
-                    <span class="vintage-font text-2xl sm:text-3xl font-bold text-brand block">100%</span>
-                    <span class="text-[11px] uppercase tracking-wider text-gray-400 font-medium">Online & Automático</span>
-                </div>
-                <div class="p-3 bg-dark-card/60 rounded-lg border border-dark-border">
-                    <span class="vintage-font text-2xl sm:text-3xl font-bold text-brand block">Navalha</span>
-                    <span class="text-[11px] uppercase tracking-wider text-gray-400 font-medium">Toalha Quente</span>
-                </div>
-                <div class="p-3 bg-dark-card/60 rounded-lg border border-dark-border">
-                    <span class="vintage-font text-2xl sm:text-3xl font-bold text-brand block">5.0 ★</span>
-                    <span class="text-[11px] uppercase tracking-wider text-gray-400 font-medium">Satisfação dos Clientes</span>
-                </div>
-                <div class="p-3 bg-dark-card/60 rounded-lg border border-dark-border">
-                    <span class="vintage-font text-2xl sm:text-3xl font-bold text-brand block">Conforto</span>
-                    <span class="text-[11px] uppercase tracking-wider text-gray-400 font-medium">Ambiente Climatizado</span>
-                </div>
-            </div>
-
         </div>
     </section>
 
@@ -171,7 +151,7 @@
                     <span class="absolute top-2 right-2 text-[9px] uppercase font-bold tracking-widest bg-brand text-black px-2 py-0.5 rounded">Combo VIP</span>
                     <div class="pr-4">
                         <h3 class="vintage-font text-lg font-bold text-white uppercase">Combo Completo (Cabelo + Barba)</h3>
-                        <p class="text-gray-400 text-xs sm:text-sm mt-1">Corte completo + barboterapia com atendimento VIP.</p>
+                        <p class="text-gray-400 text-xs sm:text-sm mt-1">Corte refinado + barboterapia completa relaxante.</p>
                         <span class="inline-block mt-3 text-xs text-brand font-semibold"><i class="fa-regular fa-clock mr-1"></i> 1h 15 min</span>
                     </div>
                     <span class="vintage-font text-2xl font-bold text-brand shrink-0">R$ 75</span>
@@ -179,8 +159,8 @@
 
                 <div data-aos="fade-up" data-aos-delay="400" class="p-6 bg-dark-base rounded-2xl border border-dark-border hover:border-brand/50 transition flex items-start justify-between">
                     <div class="pr-4">
-                        <h3 class="vintage-font text-lg font-bold text-white uppercase">Acabamento & Sobrancelha</h3>
-                        <p class="text-gray-400 text-xs sm:text-sm mt-1">Alinhamento de contornos na navalha e design de sobrancelha.</p>
+                        <h3 class="vintage-font text-lg font-bold text-white uppercase">Acabamento, Pezinho & Sobrancelha</h3>
+                        <p class="text-gray-400 text-xs sm:text-sm mt-1">Alinhamento de contornos faciais e design de sobrancelha.</p>
                         <span class="inline-block mt-3 text-xs text-brand font-semibold"><i class="fa-regular fa-clock mr-1"></i> 20 min</span>
                     </div>
                     <span class="vintage-font text-2xl font-bold text-brand shrink-0">R$ 25</span>
@@ -189,12 +169,12 @@
         </div>
     </section>
 
-    <!-- MÓDULO DE AGENDAMENTO COM CALENDÁRIO MODERNO & SLOTS ANIMADOS -->
+    <!-- MÓDULO DE AGENDAMENTO -->
     <section id="agendamento" class="py-24 bg-dark-base relative overflow-hidden">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div data-aos="fade-up" class="text-center max-w-2xl mx-auto mb-14">
                 <span class="text-brand text-xs uppercase tracking-[0.2em] font-bold block mb-2">Reserva Garantida</span>
-                <h2 class="vintage-font text-3xl sm:text-4xl font-bold uppercase tracking-wide text-white">Agendamento Online</h2>
+                <h2 class="vintage-font text-3xl sm:text-4xl font-bold uppercase tracking-wide text-white">Agende Seu Horário</h2>
                 <p class="text-gray-400 text-sm mt-2">Escolha os serviços, selecione o dia e clique no horário desejado.</p>
                 <div class="w-16 h-1 bg-brand mx-auto mt-4 rounded-full"></div>
             </div>
@@ -203,7 +183,7 @@
                 
                 <form id="bookingForm" onsubmit="event.preventDefault(); processSmartBooking();" class="space-y-8">
                     
-                    <!-- 1. Seleção de Serviços -->
+                    <!-- 1. Serviços -->
                     <div>
                         <label class="block text-xs uppercase font-bold tracking-wider text-brand mb-4">
                             1. Selecione os serviços:
@@ -222,7 +202,7 @@
 
                             <label class="relative flex items-center justify-between p-4 bg-dark-surface rounded-xl border border-dark-border cursor-pointer hover:border-brand/50 transition">
                                 <div class="flex items-center gap-3">
-                                    <input type="checkbox" name="services" value="Barboterapia" data-price="40" onchange="calculateBookingTotal()" class="w-5 h-5 accent-[#C6934B] rounded">
+                                    <input type="checkbox" name="services" value="Barboterapia Tradicional" data-price="40" onchange="calculateBookingTotal()" class="w-5 h-5 accent-[#C6934B] rounded">
                                     <div>
                                         <span class="font-semibold text-white block text-sm">Barboterapia</span>
                                         <span class="text-xs text-gray-400">Toalha quente & navalha</span>
@@ -236,7 +216,7 @@
                                     <input type="checkbox" name="services" value="Combo Completo" data-price="75" onchange="calculateBookingTotal()" class="w-5 h-5 accent-[#C6934B] rounded">
                                     <div>
                                         <span class="font-semibold text-white block text-sm">Combo Completo</span>
-                                        <span class="text-xs text-gray-400">Corte + Barba</span>
+                                        <span class="text-xs text-gray-400">Corte + Barboterapia</span>
                                     </div>
                                 </div>
                                 <span class="font-bold text-brand text-sm">R$ 75,00</span>
@@ -246,8 +226,8 @@
                                 <div class="flex items-center gap-3">
                                     <input type="checkbox" name="services" value="Sobrancelha & Acabamento" data-price="25" onchange="calculateBookingTotal()" class="w-5 h-5 accent-[#C6934B] rounded">
                                     <div>
-                                        <span class="font-semibold text-white block text-sm">Sobrancelha & Pezinho</span>
-                                        <span class="text-xs text-gray-400">Alinhamento preciso</span>
+                                        <span class="font-semibold text-white block text-sm">Sobrancelha / Pezinho</span>
+                                        <span class="text-xs text-gray-400">Alinhamento na navalha</span>
                                     </div>
                                 </div>
                                 <span class="font-bold text-brand text-sm">R$ 25,00</span>
@@ -255,7 +235,7 @@
                         </div>
                     </div>
 
-                    <!-- 2. Dados do Cliente e Barbeiro -->
+                    <!-- 2. Barbeiro & Dados -->
                     <div>
                         <label class="block text-xs uppercase font-bold tracking-wider text-brand mb-4">
                             2. Seus dados e profissional:
@@ -263,12 +243,12 @@
                         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
                             <div>
                                 <label class="block text-xs uppercase text-gray-400 mb-1">Seu Nome *</label>
-                                <input type="text" id="custName" required placeholder="Ex: João da Silva" class="w-full bg-dark-surface border border-dark-border rounded-xl px-4 py-3 text-white text-sm focus:border-brand focus:outline-none transition">
+                                <input type="text" id="custName" required placeholder="Ex: Lucas Ferreira" class="w-full bg-dark-surface border border-dark-border rounded-xl px-4 py-3 text-white text-sm focus:border-brand focus:outline-none transition">
                             </div>
 
                             <div>
                                 <label class="block text-xs uppercase text-gray-400 mb-1">Seu WhatsApp *</label>
-                                <input type="tel" id="custPhone" required placeholder="Ex: (11) 99999-9999" class="w-full bg-dark-surface border border-dark-border rounded-xl px-4 py-3 text-white text-sm focus:border-brand focus:outline-none transition">
+                                <input type="tel" id="custPhone" required placeholder="Ex: (75) 99999-9999" class="w-full bg-dark-surface border border-dark-border rounded-xl px-4 py-3 text-white text-sm focus:border-brand focus:outline-none transition">
                             </div>
 
                             <div>
@@ -281,10 +261,8 @@
                         </div>
                     </div>
 
-                    <!-- 3. Carrossel de Datas e Chips de Horários -->
+                    <!-- 3. Seleção Visual de Data (Carrossel) -->
                     <div class="pt-4 border-t border-dark-border">
-                        
-                        <!-- Cabeçalho do Mês e Controles -->
                         <div class="flex items-center justify-between mb-4">
                             <div>
                                 <span id="currentMonthYearDisplay" class="vintage-font text-2xl sm:text-3xl font-bold text-white uppercase block">Mês 2026</span>
@@ -301,14 +279,12 @@
                         </div>
 
                         <!-- Carrossel de Dias -->
-                        <div id="daysCarousel" class="flex gap-3 overflow-x-auto pb-3 pt-1 no-scrollbar scroll-smooth">
-                            <!-- Gerado dinamicamente -->
-                        </div>
+                        <div id="daysCarousel" class="flex gap-3 overflow-x-auto pb-3 pt-1 no-scrollbar scroll-smooth"></div>
 
                         <input type="hidden" id="custDate" required>
                         <input type="hidden" id="custTime" required>
 
-                        <!-- Acordeão Animado de Horários -->
+                        <!-- Aba Animada de Horários -->
                         <div id="timeSlotsAccordion" class="accordion-content overflow-hidden max-h-0 opacity-0 mt-2">
                             <div class="pt-6 border-t border-dark-border/60">
                                 <div class="flex items-center justify-between mb-4">
@@ -318,28 +294,25 @@
                                     <span id="selectedSlotNotice" class="text-xs text-gray-400 font-medium">Selecione um horário</span>
                                 </div>
 
-                                <div id="timeSlotsContainer" class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 gap-2.5">
-                                    <!-- Chips de Horários -->
-                                </div>
+                                <div id="timeSlotsContainer" class="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 gap-2.5"></div>
                             </div>
                         </div>
-
                     </div>
 
-                    <!-- Resumo de Preço -->
+                    <!-- Resumo -->
                     <div class="p-5 bg-dark-surface/80 rounded-xl border border-dark-border flex flex-col sm:flex-row items-center justify-between gap-4">
                         <div>
                             <span class="text-xs uppercase text-gray-400 font-semibold block">Total dos Serviços</span>
                             <span id="bookingTotalDisplay" class="vintage-font text-3xl font-bold text-brand">R$ 0,00</span>
                         </div>
-                        <span class="text-xs text-gray-400 text-center sm:text-right">Pagamento presencial após o atendimento.</span>
+                        <span class="text-xs text-gray-400 text-center sm:text-right">Pagamento efetuado presencialmente no local.</span>
                     </div>
 
                     <!-- Botão Submit -->
                     <div>
                         <button type="submit" id="submitBtn" class="w-full flex items-center justify-center gap-3 bg-brand hover:bg-brand-hover text-black py-4 rounded-xl font-bold uppercase tracking-wider text-sm shadow-xl shadow-brand/20 transition transform hover:-translate-y-0.5">
                             <span id="btnText"><i class="fa-solid fa-calendar-check text-base mr-2"></i> Confirmar Agendamento</span>
-                            <span id="btnLoading" class="hidden"><i class="fa-solid fa-circle-notch fa-spin text-base mr-2"></i> Enviando...</span>
+                            <span id="btnLoading" class="hidden"><i class="fa-solid fa-circle-notch fa-spin text-base mr-2"></i> Gravando Agendamento...</span>
                         </button>
                     </div>
 
@@ -353,13 +326,13 @@
                     <h3 class="vintage-font text-2xl sm:text-3xl font-bold text-white uppercase mb-2">Agendamento Confirmado!</h3>
                     <p class="text-gray-300 text-xs sm:text-sm max-w-md mb-2" id="successDetails"></p>
                     <p class="text-xs text-emerald-400 font-medium mb-4 flex items-center justify-center gap-1.5">
-                        <i class="fa-solid fa-bolt"></i> Horário reservado com sucesso!
+                        <i class="fa-solid fa-bolt"></i> Salvo diretamente no banco do sistema!
                     </p>
                     <span class="text-xs text-brand uppercase tracking-widest font-bold mb-6 block">Protocolo: #<span id="successProtocol"></span></span>
                     
                     <div class="flex flex-col sm:flex-row gap-3">
                         <button id="btnNotifyWhatsapp" class="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-6 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition">
-                            <i class="fa-brands fa-whatsapp text-base"></i> Enviar Comprovante no WhatsApp
+                            <i class="fa-brands fa-whatsapp text-base"></i> Abrir Comprovante no WhatsApp
                         </button>
                         <button onclick="closeSuccessModal()" class="px-6 py-3 rounded-xl border border-dark-border text-xs text-gray-400 hover:text-white uppercase font-semibold transition">
                             Novo Agendamento
@@ -371,200 +344,41 @@
         </div>
     </section>
 
-    <!-- Galeria de Fotos / Feed Instagram -->
+    <!-- Galeria -->
     <section id="galeria" class="py-24 bg-dark-card border-t border-dark-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            
             <div data-aos="fade-up" class="text-center max-w-2xl mx-auto mb-14">
-                <span class="text-brand text-xs uppercase tracking-[0.2em] font-bold block mb-2">Galeria de Trabalhos</span>
-                <h2 class="vintage-font text-3xl sm:text-4xl font-bold uppercase tracking-wide text-white">Nossos Resultados</h2>
-                
-                <div class="mt-4 inline-flex items-center gap-3 bg-dark-surface border border-dark-border py-2 px-4 rounded-full">
-                    <i class="fa-brands fa-instagram text-brand text-lg"></i>
-                    <span class="text-xs text-gray-300 font-semibold">@suabarbearia</span>
-                    <a href="https://instagram.com" target="_blank" class="bg-brand hover:bg-brand-hover text-black text-[10px] font-extrabold uppercase px-3 py-1 rounded-full transition ml-1">
-                        Seguir
-                    </a>
-                </div>
-                <div class="w-16 h-1 bg-brand mx-auto mt-6 rounded-full"></div>
+                <span class="text-brand text-xs uppercase tracking-[0.2em] font-bold block mb-2">Trabalhos Reais</span>
+                <h2 class="vintage-font text-3xl sm:text-4xl font-bold uppercase tracking-wide text-white">Galeria de Cortes</h2>
+                <div class="w-16 h-1 bg-brand mx-auto mt-4 rounded-full"></div>
             </div>
 
-            <!-- Grade 1:1 Estilo Insta -->
             <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
-                
-                <!-- Foto 1 -->
-                <div data-aos="fade-up" data-aos-delay="100" class="relative group rounded-2xl overflow-hidden aspect-square border border-dark-border bg-dark-base cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&q=80&w=800" alt="Corte Degradê" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-between p-4 sm:p-6">
-                        <div class="flex justify-between items-center text-xs text-brand font-bold">
-                            <span>Sua Barbearia</span>
-                            <i class="fa-solid fa-scissors"></i>
-                        </div>
-                        <div class="text-center">
-                            <p class="font-bold text-white text-xs sm:text-sm uppercase tracking-wide">Fade Americano</p>
-                            <p class="text-[11px] text-gray-400 mt-1">Degradê suave & acabamento perfeito</p>
-                        </div>
-                        <div class="flex justify-center items-center gap-6 text-white text-xs font-semibold">
-                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-heart text-red-500"></i> Curtir</span>
-                        </div>
-                    </div>
+                <div data-aos="fade-up" data-aos-delay="100" class="rounded-2xl overflow-hidden aspect-square border border-dark-border">
+                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&q=80&w=800" alt="Corte 1" class="w-full h-full object-cover">
                 </div>
-
-                <!-- Foto 2 -->
-                <div data-aos="fade-up" data-aos-delay="150" class="relative group rounded-2xl overflow-hidden aspect-square border border-dark-border bg-dark-base cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=800" alt="Barboterapia" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-between p-4 sm:p-6">
-                        <div class="flex justify-between items-center text-xs text-brand font-bold">
-                            <span>Sua Barbearia</span>
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        </div>
-                        <div class="text-center">
-                            <p class="font-bold text-white text-xs sm:text-sm uppercase tracking-wide">Barboterapia VIP</p>
-                            <p class="text-[11px] text-gray-400 mt-1">Alinhamento preciso & toalha quente</p>
-                        </div>
-                        <div class="flex justify-center items-center gap-6 text-white text-xs font-semibold">
-                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-heart text-red-500"></i> Curtir</span>
-                        </div>
-                    </div>
+                <div data-aos="fade-up" data-aos-delay="150" class="rounded-2xl overflow-hidden aspect-square border border-dark-border">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&q=80&w=800" alt="Corte 2" class="w-full h-full object-cover">
                 </div>
-
-                <!-- Foto 3 -->
-                <div data-aos="fade-up" data-aos-delay="200" class="relative group rounded-2xl overflow-hidden aspect-square border border-dark-border bg-dark-base cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=800" alt="Ambiente" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-between p-4 sm:p-6">
-                        <div class="flex justify-between items-center text-xs text-brand font-bold">
-                            <span>Sua Barbearia</span>
-                            <i class="fa-solid fa-chair"></i>
-                        </div>
-                        <div class="text-center">
-                            <p class="font-bold text-white text-xs sm:text-sm uppercase tracking-wide">Ambiente & Conforto</p>
-                            <p class="text-[11px] text-gray-400 mt-1">Estrutura premium e café cortesia</p>
-                        </div>
-                        <div class="flex justify-center items-center gap-6 text-white text-xs font-semibold">
-                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-heart text-red-500"></i> Curtir</span>
-                        </div>
-                    </div>
+                <div data-aos="fade-up" data-aos-delay="200" class="rounded-2xl overflow-hidden aspect-square border border-dark-border">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&q=80&w=800" alt="Corte 3" class="w-full h-full object-cover">
                 </div>
-
-                <!-- Foto 4 -->
-                <div data-aos="fade-up" data-aos-delay="250" class="relative group rounded-2xl overflow-hidden aspect-square border border-dark-border bg-dark-base cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&q=80&w=800" alt="Tesoura" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-between p-4 sm:p-6">
-                        <div class="flex justify-between items-center text-xs text-brand font-bold">
-                            <span>Sua Barbearia</span>
-                            <i class="fa-solid fa-scissors"></i>
-                        </div>
-                        <div class="text-center">
-                            <p class="font-bold text-white text-xs sm:text-sm uppercase tracking-wide">Clássico na Tesoura</p>
-                            <p class="text-[11px] text-gray-400 mt-1">Corte estruturado e acabamento natural</p>
-                        </div>
-                        <div class="flex justify-center items-center gap-6 text-white text-xs font-semibold">
-                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-heart text-red-500"></i> Curtir</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Foto 5 -->
-                <div data-aos="fade-up" data-aos-delay="300" class="relative group rounded-2xl overflow-hidden aspect-square border border-dark-border bg-dark-base cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?auto=format&fit=crop&q=80&w=800" alt="Combo" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-between p-4 sm:p-6">
-                        <div class="flex justify-between items-center text-xs text-brand font-bold">
-                            <span>Sua Barbearia</span>
-                            <i class="fa-solid fa-crown"></i>
-                        </div>
-                        <div class="text-center">
-                            <p class="font-bold text-white text-xs sm:text-sm uppercase tracking-wide">Combo Completo</p>
-                            <p class="text-[11px] text-gray-400 mt-1">Cabelo e barba alinhados</p>
-                        </div>
-                        <div class="flex justify-center items-center gap-6 text-white text-xs font-semibold">
-                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-heart text-red-500"></i> Curtir</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Foto 6 -->
-                <div data-aos="fade-up" data-aos-delay="350" class="relative group rounded-2xl overflow-hidden aspect-square border border-dark-border bg-dark-base cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&q=80&w=800" alt="Penteado" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-between p-4 sm:p-6">
-                        <div class="flex justify-between items-center text-xs text-brand font-bold">
-                            <span>Sua Barbearia</span>
-                            <i class="fa-solid fa-spray-can"></i>
-                        </div>
-                        <div class="text-center">
-                            <p class="font-bold text-white text-xs sm:text-sm uppercase tracking-wide">Finalização</p>
-                            <p class="text-[11px] text-gray-400 mt-1">Pomadas de alta fixação e brilho</p>
-                        </div>
-                        <div class="flex justify-center items-center gap-6 text-white text-xs font-semibold">
-                            <span class="flex items-center gap-1.5"><i class="fa-solid fa-heart text-red-500"></i> Curtir</span>
-                        </div>
-                    </div>
-                </div>
-
             </div>
-
-            <div class="text-center mt-10" data-aos="fade-up">
-                <a href="https://instagram.com" target="_blank" class="inline-flex items-center gap-2.5 bg-dark-surface hover:bg-dark-border border border-brand/40 hover:border-brand text-white text-xs uppercase font-bold px-8 py-3.5 rounded-xl transition transform hover:-translate-y-0.5 shadow-lg">
-                    <i class="fa-brands fa-instagram text-brand text-sm"></i>
-                    Ver Perfil no Instagram
-                </a>
-            </div>
-
         </div>
     </section>
 
-    <!-- Localização & Contato -->
+    <!-- Localização -->
     <section id="localizacao" class="py-24 bg-dark-base border-t border-dark-border">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right">
-                    <span class="text-brand text-xs uppercase tracking-[0.2em] font-bold block mb-2">Venha nos Visitar</span>
-                    <h2 class="vintage-font text-3xl sm:text-4xl font-bold uppercase tracking-wide text-white mb-6">Nome da Barbearia</h2>
-                    
-                    <div class="space-y-6 text-gray-300">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-dark-surface border border-dark-border flex items-center justify-center text-brand shrink-0">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-white">Endereço</h4>
-                                <p class="text-sm text-gray-400">Rua Exemplo, 123 - Centro, Sua Cidade - UF</p>
-                                <a href="https://maps.google.com" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-brand font-bold uppercase tracking-wider mt-2 hover:underline">
-                                    <i class="fa-solid fa-diamond-turn-right text-xs"></i> Abrir Rota no Google Maps
-                                </a>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-dark-surface border border-dark-border flex items-center justify-center text-brand shrink-0">
-                                <i class="fa-regular fa-clock"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-white">Horário de Funcionamento</h4>
-                                <p class="text-sm text-gray-400">Segunda a Sábado: 08:30 às 19:30 (Domingo Fechado)</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-xl bg-dark-surface border border-dark-border flex items-center justify-center text-brand shrink-0">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-white">WhatsApp</h4>
-                                <a href="https://wa.me/5511999999999" target="_blank" class="text-sm text-brand hover:underline">(11) 99999-9999</a>
-                            </div>
-                        </div>
-                    </div>
+                <div>
+                    <span class="text-brand text-xs uppercase tracking-[0.2em] font-bold block mb-2">Visite Nossa Cadeira</span>
+                    <h2 class="vintage-font text-3xl sm:text-4xl font-bold uppercase tracking-wide text-white mb-6">Barbearia Demo</h2>
+                    <p class="text-sm text-gray-400 mb-4">Rua Exemplo, 123 - Centro</p>
+                    <p class="text-sm text-gray-400">Segunda a Sábado: 08:30 às 19:30</p>
                 </div>
-
-                <!-- Mapa Incorporado -->
-                <div data-aos="fade-left" class="w-full h-80 sm:h-96 rounded-2xl overflow-hidden border border-dark-border shadow-xl relative">
-                    <iframe 
-                        title="Localização Barbearia"
-                        src="https://maps.google.com/maps?q=Sao+Paulo+SP&t=&z=13&ie=UTF8&iwloc=&output=embed" 
-                        class="w-full h-full border-0 rounded-2xl" 
-                        allowfullscreen="" 
-                        loading="lazy">
-                    </iframe>
+                <div class="w-full h-72 rounded-2xl overflow-hidden border border-dark-border">
+                    <iframe title="Mapa" src="https://maps.google.com/maps?q=Feira%20de%20Santana&t=&z=13&ie=UTF8&iwloc=&output=embed" class="w-full h-full border-0 rounded-2xl" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
@@ -572,32 +386,19 @@
 
     <!-- Footer -->
     <footer class="py-8 bg-dark-card border-t border-dark-border text-center text-xs text-gray-500">
-        <p>© 2026 Nome da Barbearia. Sistema de Agendamento Online.</p>
+        <p>© 2026 Barbearia Demo. Todos os direitos reservados.</p>
     </footer>
-
-    <!-- Botão WhatsApp Flutuante -->
-    <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20tirar%20uma%20dúvida." target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba59] text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-2xl hover:scale-110 transition duration-300">
-        <i class="fa-brands fa-whatsapp"></i>
-    </a>
 
     <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true, offset: 80 });
 
-        // =========================================================================
-        // CONFIGURAÇÕES DO CLIENTE (PREENCHA APENAS ESTAS VARIÁVEIS POR CLIENTE)
-        // =========================================================================
-        const CLIENT_CONFIG = {
-            barberPhone: "5511999999999", // WhatsApp do barbeiro com DDI + DDD (ex: 5511999999999)
-            supabaseUrl: "https://SEU_PROJETO.supabase.co/rest/v1", // URL REST da tabela Supabase
-            supabaseKey: "SUA_CHAVE_ANON_KEY", // Anon Key do Supabase
-            telegramBotToken: "", // Token do Bot Telegram (Opcional)
-            telegramChatId: "",   // Chat ID do Barbeiro no Telegram (Opcional)
-            makeWebhookUrl: ""    // Webhook Make (Opcional)
-        };
+        // --- CREDENCIAIS DIRETAS DO SUPABASE ---
+        const SUPABASE_API = "https://jdwcncjutafxmeswdnci.supabase.co/rest/v1";
+        const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impkd2NuY2p1dGFmeG1lc3dkbmNpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcwMDM2MzAsImV4cCI6MjEwMjU3OTYzMH0.v0rlWhCqKB3zQ6DSRvLz4ninRMfyYqoVYDd5BUjJAl8";
+        const BARBER_PHONE = "5575992143663";
 
-        // Grade de horários padrão de 30 em 30 min
         const HORARIOS_GRADE = [
             "09:00", "09:30", "10:00", "10:30", "11:00", "11:30",
             "12:00", "12:30", "14:00", "14:30", "15:00", "15:30",
@@ -620,7 +421,6 @@
             renderizarCarrosselDias();
         });
 
-        // 1. Gera os próximos 14 dias para o Carrossel
         async function renderizarCarrosselDias() {
             const carousel = document.getElementById("daysCarousel");
             const barber = document.getElementById("custBarber").value;
@@ -634,7 +434,7 @@
             let primeiraDataValida = "";
 
             const horaAtualMinutos = agora.getHours() * 60 + agora.getMinutes();
-            const fimExpedienteMinutos = 19 * 60 + 30; // 19:30
+            const fimExpedienteMinutos = 19 * 60 + 30;
 
             for (let i = 0; i < 14; i++) {
                 const diaObj = new Date();
@@ -651,8 +451,7 @@
 
                 const isBloqueado = isDomingo || isHojeEncerrado;
 
-                let vagasTexto = isDomingo || isHojeEncerrado ? "0 vagas" : `${HORARIOS_GRADE.length} vagas`;
-
+                let vagasTexto = isBloqueado ? "0 vagas" : `${HORARIOS_GRADE.length} vagas`;
                 let badgeClass = isBloqueado 
                     ? "bg-red-500/10 border-red-500/30 text-red-400" 
                     : "bg-dark-base border-dark-border text-gray-400";
@@ -666,11 +465,9 @@
                 cardsHtml += `
                     <div id="day-card-${isoDate}" onclick="${isBloqueado ? '' : `selecionarDia('${isoDate}')`}" 
                          class="day-card flex-shrink-0 w-24 sm:w-28 p-3 rounded-2xl border text-center transition-all duration-200 flex flex-col justify-between ${cardClass}">
-                        
                         <div class="inline-flex items-center justify-center gap-1 text-[10px] font-bold py-1 px-2 rounded-full border ${badgeClass} mb-2">
                             <i class="fa-solid fa-users text-[9px]"></i> ${vagasTexto}
                         </div>
-                        
                         <span class="text-[11px] text-emerald-400 font-medium">${subtitle}</span>
                         <span class="text-xs text-white font-bold uppercase mt-0.5">${diaSemanaNome}</span>
                         <span class="vintage-font text-2xl font-bold text-brand mt-1">${diaNumero}</span>
@@ -689,7 +486,6 @@
             }
         }
 
-        // 2. Quando o usuário clica em um dia no carrossel -> Anima os horários
         async function selecionarDia(isoDate) {
             dataSelecionadaISO = isoDate;
             document.getElementById("custDate").value = isoDate;
@@ -710,13 +506,8 @@
             accordion.classList.add("max-h-[600px]", "opacity-100");
 
             await carregarChipsDeHorarios(isoDate);
-
-            if (window.innerWidth < 768) {
-                accordion.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-            }
         }
 
-        // 3. Consulta agendamentos e gera os Chips
         async function carregarChipsDeHorarios(date) {
             const barber = document.getElementById('custBarber').value;
             const container = document.getElementById('timeSlotsContainer');
@@ -729,25 +520,21 @@
             `;
 
             let horasOcupadas = new Set();
-
-            // Se as credenciais do Supabase estiverem configuradas, consulta o banco
-            if (CLIENT_CONFIG.supabaseKey !== "SUA_CHAVE_ANON_KEY") {
-                try {
-                    const url = `${CLIENT_CONFIG.supabaseUrl}/agendamentos?select=hora_agendamento&data_agendamento=eq.${date}&barbeiro=eq.${encodeURIComponent(barber)}&status=neq.cancelado`;
-                    const response = await fetch(url, {
-                        headers: {
-                            'apikey': CLIENT_CONFIG.supabaseKey,
-                            'Authorization': `Bearer ${CLIENT_CONFIG.supabaseKey}`
-                        }
-                    });
-
-                    if (response.ok) {
-                        const ocupados = await response.json();
-                        horasOcupadas = new Set(ocupados.map(item => item.hora_agendamento));
+            try {
+                const url = `${SUPABASE_API}/agendamentos?select=hora_agendamento&data_agendamento=eq.${date}&barbeiro=eq.${encodeURIComponent(barber)}&status=neq.cancelado`;
+                const response = await fetch(url, {
+                    headers: {
+                        'apikey': SUPABASE_KEY,
+                        'Authorization': `Bearer ${SUPABASE_KEY}`
                     }
-                } catch (err) {
-                    console.warn("Consulta Supabase em modo fallback local.");
+                });
+
+                if (response.ok) {
+                    const ocupados = await response.json();
+                    horasOcupadas = new Set(ocupados.map(item => item.hora_agendamento));
                 }
+            } catch (err) {
+                console.warn("Consulta Supabase:", err);
             }
 
             const agora = new Date();
@@ -797,7 +584,6 @@
             }
         }
 
-        // 4. Seleciona o horário clicado
         function selecionarHorario(hora, element) {
             document.querySelectorAll(".time-slot-btn").forEach(btn => {
                 if (!btn.disabled) {
@@ -823,7 +609,6 @@
             return total;
         }
 
-        // 5. Salva e envia confirmação
         async function processSmartBooking() {
             const name = document.getElementById('custName').value.trim();
             const phone = document.getElementById('custPhone').value.trim();
@@ -843,7 +628,7 @@
             }
 
             if (!date || !time) {
-                alert('Por favor, selecione um dia e horário no calendário.');
+                alert('Por favor, clique em um dos horários disponíveis no calendário.');
                 return;
             }
 
@@ -858,66 +643,47 @@
             const [year, month, day] = date.split('-');
             const formattedDate = `${day}/${month}/${year}`;
 
-            // 1. Supabase (Se configurado)
-            if (CLIENT_CONFIG.supabaseKey !== "SUA_CHAVE_ANON_KEY") {
-                try {
-                    await fetch(`${CLIENT_CONFIG.supabaseUrl}/agendamentos`, {
-                        method: 'POST',
-                        headers: {
-                            'apikey': CLIENT_CONFIG.supabaseKey,
-                            'Authorization': `Bearer ${CLIENT_CONFIG.supabaseKey}`,
-                            'Content-Type': 'application/json',
-                            'Prefer': 'return=minimal'
-                        },
-                        body: JSON.stringify({
-                            cliente_nome: name,
-                            cliente_telefone: phone,
-                            barbeiro: barber,
-                            servicos: services.join(', '),
-                            data_agendamento: date,
-                            hora_agendamento: time,
-                            valor: total,
-                            status: "pendente"
-                        })
-                    });
-                } catch (err) {}
+            // Envia para o Supabase
+            try {
+                const dbResponse = await fetch(`${SUPABASE_API}/agendamentos`, {
+                    method: 'POST',
+                    headers: {
+                        'apikey': SUPABASE_KEY,
+                        'Authorization': `Bearer ${SUPABASE_KEY}`,
+                        'Content-Type': 'application/json',
+                        'Prefer': 'return=minimal'
+                    },
+                    body: JSON.stringify({
+                        cliente_nome: name,
+                        cliente_telefone: phone,
+                        barbeiro: barber,
+                        servicos: services.join(', '),
+                        data_agendamento: date,
+                        hora_agendamento: time,
+                        valor: total,
+                        status: "pendente"
+                    })
+                });
+
+                if (!dbResponse.ok) {
+                    const errorText = await dbResponse.text();
+                    throw new Error(errorText || "Falha ao gravar registro.");
+                }
+            } catch (err) {
+                alert("Erro ao gravar agendamento: " + err.message);
+                document.getElementById('btnText').classList.remove('hidden');
+                document.getElementById('btnLoading').classList.add('hidden');
+                document.getElementById('submitBtn').disabled = false;
+                return;
             }
 
-            // 2. Telegram (Se configurado)
-            if (CLIENT_CONFIG.telegramBotToken && CLIENT_CONFIG.telegramChatId) {
-                let msgTelegram = `🔔 <b>NOVO AGENDAMENTO!</b>\n\n` +
-                                  `📋 <b>Protocolo:</b> #${protocol}\n` +
-                                  `👤 <b>Cliente:</b> ${name}\n` +
-                                  `📞 <b>WhatsApp:</b> ${phone}\n` +
-                                  `📅 <b>Data:</b> ${formattedDate} às ${time}\n` +
-                                  `💈 <b>Profissional:</b> ${barber}\n\n` +
-                                  `✂️ <b>Serviços:</b>\n` +
-                                  services.map(s => ` • ${s}`).join('\n') + `\n\n` +
-                                  `💰 <b>Total:</b> R$ ${total.toFixed(2).replace('.', ',')}`;
-
-                const telegramUrl = `https://api.telegram.org/bot${CLIENT_CONFIG.telegramBotToken}/sendMessage?chat_id=${CLIENT_CONFIG.telegramChatId}&text=${encodeURIComponent(msgTelegram)}&parse_mode=HTML`;
-                try { await fetch(telegramUrl); } catch (e) {}
-            }
-
-            // 3. Webhook Make (Se configurado)
-            if (CLIENT_CONFIG.makeWebhookUrl) {
-                try {
-                    fetch(CLIENT_CONFIG.makeWebhookUrl, {
-                        method: 'POST',
-                        mode: 'no-cors',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ name, phone, formattedDate, time, barber, services, total })
-                    });
-                } catch (e) {}
-            }
-
-            // Modal de Sucesso
+            // Atualiza UI
             document.getElementById('successProtocol').textContent = protocol;
             document.getElementById('successDetails').innerHTML = `
                 Horário reservado para <strong>${formattedDate}</strong> às <strong>${time}</strong> com <strong>${barber}</strong>.
             `;
 
-            let waMsg = `🔔 *NOVO AGENDAMENTO REALIZADO*\n\n` +
+            let waMsg = `🔔 *NOVO AGENDAMENTO REALIZADO (DEMO)*\n\n` +
                         `📋 *Protocolo:* #${protocol}\n` +
                         `👤 *Cliente:* ${name}\n` +
                         `📞 *WhatsApp:* ${phone}\n` +
@@ -927,7 +693,7 @@
                         services.map(s => ` • ${s}`).join('\n') + `\n\n` +
                         `💰 *Total:* R$ ${total.toFixed(2).replace('.', ',')}`;
 
-            const fallbackUrl = `https://wa.me/${CLIENT_CONFIG.barberPhone}?text=${encodeURIComponent(waMsg)}`;
+            const fallbackUrl = `https://wa.me/${BARBER_PHONE}?text=${encodeURIComponent(waMsg)}`;
             document.getElementById('btnNotifyWhatsapp').onclick = function() {
                 window.open(fallbackUrl, '_blank');
             };
