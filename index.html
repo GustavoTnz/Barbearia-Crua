@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbearia Premium | Demonstração de Agendamento Online</title>
+    <title>Barbearia Premium | Agendamento Online</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -68,9 +68,9 @@
                 </div>
                 <div>
                     <div class="vintage-font text-xl sm:text-2xl font-bold tracking-wider text-white uppercase leading-none">
-                        BARBEARIA <span class="text-brand">DEMO</span>
+                        BARBEARIA <span class="text-brand">PREMIUM</span>
                     </div>
-                    <span class="text-[10px] uppercase tracking-[0.25em] text-gray-400 font-semibold block mt-0.5">Modelo de Demonstração • Agendamento Online</span>
+                    <span class="text-[10px] uppercase tracking-[0.25em] text-gray-400 font-semibold block mt-0.5">Estilo & Tradição • Agendamento Online</span>
                 </div>
             </a>
 
@@ -80,7 +80,6 @@
                 <a href="#agendamento" class="text-brand font-bold hover:underline transition">Agendar Online</a>
                 <a href="#galeria" class="hover:text-brand transition">Galeria</a>
                 <a href="#localizacao" class="hover:text-brand transition">Localização</a>
-                <a href="admin.html" class="text-gray-500 hover:text-brand text-[11px]"><i class="fa-solid fa-lock text-xs"></i> Painel Admin</a>
             </nav>
 
             <a href="#agendamento" class="hidden sm:inline-flex items-center gap-2 bg-brand hover:bg-brand-hover text-black px-6 py-2.5 rounded-lg font-bold uppercase tracking-wider text-xs transition transform hover:-translate-y-0.5 shadow-lg shadow-brand/15">
@@ -97,7 +96,7 @@
 
         <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
             <div data-aos="fade-down" class="inline-flex items-center gap-2 px-5 py-1.5 rounded-full border border-brand/40 bg-brand/10 text-brand text-xs uppercase tracking-[0.2em] font-bold mb-6">
-                <i class="fa-solid fa-crown text-xs"></i> Sistema de Agendamento para Barbearias
+                <i class="fa-solid fa-crown text-xs"></i> Tradição & Estilo Masculino
             </div>
             
             <h1 data-aos="fade-up" data-aos-delay="100" class="vintage-font text-4xl sm:text-6xl md:text-7xl font-extrabold uppercase tracking-tight text-white mb-4 leading-tight">
@@ -110,10 +109,10 @@
 
             <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#agendamento" class="inline-flex items-center justify-center gap-3 bg-brand hover:bg-brand-hover text-black px-8 py-4 rounded-xl font-bold uppercase tracking-wider text-xs shadow-xl shadow-brand/20 transition transform hover:-translate-y-1">
-                    <i class="fa-solid fa-calendar-days text-sm"></i> Fazer Agendamento de Teste
+                    <i class="fa-solid fa-calendar-days text-sm"></i> Fazer Agendamento
                 </a>
-                <a href="admin.html" class="inline-flex items-center justify-center gap-2 border border-dark-border hover:border-brand/50 bg-dark-card/80 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold uppercase tracking-wider text-xs transition">
-                    Ver Painel do Barbeiro
+                <a href="#servicos" class="inline-flex items-center justify-center gap-2 border border-dark-border hover:border-brand/50 bg-dark-card/80 backdrop-blur-sm text-white px-8 py-4 rounded-xl font-semibold uppercase tracking-wider text-xs transition">
+                    Ver Tabela de Serviços
                 </a>
             </div>
         </div>
@@ -373,7 +372,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <span class="text-brand text-xs uppercase tracking-[0.2em] font-bold block mb-2">Visite Nossa Cadeira</span>
-                    <h2 class="vintage-font text-3xl sm:text-4xl font-bold uppercase tracking-wide text-white mb-6">Barbearia Demo</h2>
+                    <h2 class="vintage-font text-3xl sm:text-4xl font-bold uppercase tracking-wide text-white mb-6">Barbearia Premium</h2>
                     <p class="text-sm text-gray-400 mb-4">Rua Exemplo, 123 - Centro</p>
                     <p class="text-sm text-gray-400">Segunda a Sábado: 08:30 às 19:30</p>
                 </div>
@@ -386,7 +385,7 @@
 
     <!-- Footer -->
     <footer class="py-8 bg-dark-card border-t border-dark-border text-center text-xs text-gray-500">
-        <p>© 2026 Barbearia Demo. Todos os direitos reservados.</p>
+        <p>© 2026 Barbearia Premium. Todos os direitos reservados.</p>
     </footer>
 
     <!-- Scripts -->
@@ -643,7 +642,6 @@
             const [year, month, day] = date.split('-');
             const formattedDate = `${day}/${month}/${year}`;
 
-            // Envia para o Supabase
             try {
                 const dbResponse = await fetch(`${SUPABASE_API}/agendamentos`, {
                     method: 'POST',
@@ -677,13 +675,12 @@
                 return;
             }
 
-            // Atualiza UI
             document.getElementById('successProtocol').textContent = protocol;
             document.getElementById('successDetails').innerHTML = `
                 Horário reservado para <strong>${formattedDate}</strong> às <strong>${time}</strong> com <strong>${barber}</strong>.
             `;
 
-            let waMsg = `🔔 *NOVO AGENDAMENTO REALIZADO (DEMO)*\n\n` +
+            let waMsg = `🔔 *NOVO AGENDAMENTO REALIZADO*\n\n` +
                         `📋 *Protocolo:* #${protocol}\n` +
                         `👤 *Cliente:* ${name}\n` +
                         `📞 *WhatsApp:* ${phone}\n` +
