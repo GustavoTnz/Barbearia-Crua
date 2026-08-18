@@ -7,7 +7,7 @@
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Supabase JS CDN para Autenticação e Banco -->
+  <!-- Supabase JS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   
   <script>
@@ -16,7 +16,7 @@
         extend: {
           colors: {
             brand: {
-              DEFAULT: '#C6934B', // Cor primária do cliente
+              DEFAULT: '#C6934B',
               hover: '#AE7E3A',
               light: '#E2B878',
               dark: '#875B22'
@@ -43,15 +43,15 @@
 </head>
 <body class="bg-dark-base text-gray-200 antialiased min-h-screen">
 
-  <!-- 1. TELA DE LOGIN (Visível por padrão se não autenticado) -->
+  <!-- 1. TELA DE LOGIN -->
   <div id="loginScreen" class="min-h-screen flex items-center justify-center px-4">
     <div class="bg-dark-card border border-dark-border rounded-2xl p-8 max-w-md w-full shadow-2xl">
       <div class="text-center mb-8">
         <div class="w-12 h-12 rounded-xl bg-brand/10 border border-brand/30 flex items-center justify-center text-brand text-xl mx-auto mb-3">
           <i class="fa-solid fa-lock"></i>
         </div>
-        <h1 class="vintage-font text-2xl font-bold text-white uppercase leading-none" id="brandTitleLogin">NOME DA BARBEARIA</h1>
-        <p class="text-xs text-gray-400 mt-1">Acesso Restrito ao Painel de Gestão</p>
+        <h1 class="vintage-font text-2xl font-bold text-white uppercase leading-none">PAINEL ADMINISTRATIVO</h1>
+        <p class="text-xs text-gray-400 mt-1">Acesso Restrito ao Barbeiro</p>
       </div>
 
       <div id="loginError" class="hidden mb-4 p-3 bg-red-500/10 border border-red-500/30 text-red-400 text-xs rounded-xl text-center"></div>
@@ -59,11 +59,11 @@
       <form onsubmit="handleLogin(event)" class="space-y-4" autocomplete="off">
         <div>
           <label class="block text-xs uppercase font-bold text-gray-400 mb-1">E-mail</label>
-          <input type="email" id="loginEmail" required placeholder="admin@suabarbearia.com" autocomplete="off" class="w-full bg-dark-surface border border-dark-border rounded-xl px-4 py-3 text-white text-sm focus:border-brand focus:outline-none transition">
+          <input type="email" id="loginEmail" required placeholder="seuemail@exemplo.com" class="w-full bg-dark-surface border border-dark-border rounded-xl px-4 py-3 text-white text-sm focus:border-brand focus:outline-none transition">
         </div>
         <div>
           <label class="block text-xs uppercase font-bold text-gray-400 mb-1">Senha</label>
-          <input type="password" id="loginPassword" required placeholder="••••••••" autocomplete="new-password" class="w-full bg-dark-surface border border-dark-border rounded-xl px-4 py-3 text-white text-sm focus:border-brand focus:outline-none transition">
+          <input type="password" id="loginPassword" required placeholder="••••••••" class="w-full bg-dark-surface border border-dark-border rounded-xl px-4 py-3 text-white text-sm focus:border-brand focus:outline-none transition">
         </div>
         <button type="submit" id="btnLogin" class="w-full bg-brand hover:bg-brand-hover text-black font-bold uppercase tracking-wider py-3.5 rounded-xl transition text-xs shadow-lg shadow-brand/15 mt-2">
           Entrar no Sistema
@@ -78,9 +78,8 @@
     </div>
   </div>
 
-  <!-- 2. PAINEL ADMINISTRATIVO (Oculto até fazer login) -->
+  <!-- 2. PAINEL DE GESTÃO -->
   <div id="adminPanel" class="hidden">
-    <!-- Navbar Admin -->
     <header class="bg-dark-card border-b border-dark-border px-6 py-4 sticky top-0 z-50">
       <div class="max-w-7xl mx-auto flex justify-between items-center">
         <div class="flex items-center gap-3">
@@ -88,8 +87,8 @@
             <i class="fa-solid fa-scissors"></i>
           </div>
           <div>
-            <h1 class="vintage-font text-lg font-bold text-white uppercase leading-none" id="brandTitleHeader">NOME DA BARBEARIA</h1>
-            <span class="text-[10px] text-brand uppercase tracking-widest block mt-0.5" id="userEmailDisplay">Painel de Gestão</span>
+            <h1 class="vintage-font text-lg font-bold text-white uppercase leading-none">PAINEL DO BARBEIRO</h1>
+            <span class="text-[10px] text-brand uppercase tracking-widest block mt-0.5" id="userEmailDisplay">Conectado</span>
           </div>
         </div>
         <div class="flex items-center gap-3">
@@ -108,7 +107,7 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 py-8 space-y-6">
       
-      <!-- Cards de Métricas -->
+      <!-- Métricas -->
       <div class="grid grid-cols-1 sm:grid-cols-4 gap-4">
         <div class="bg-dark-card border border-dark-border p-4 rounded-xl">
           <span class="text-xs text-gray-400 uppercase font-semibold block">Total Agendamentos</span>
@@ -128,7 +127,7 @@
         </div>
       </div>
 
-      <!-- Barra de Filtros -->
+      <!-- Filtro -->
       <div class="bg-dark-card border border-dark-border rounded-xl p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
         <div class="flex items-center gap-3 w-full sm:w-auto">
           <span class="text-xs uppercase font-bold text-gray-400">Filtrar por Status:</span>
@@ -142,11 +141,11 @@
         </div>
         <div class="text-xs text-gray-400 flex items-center gap-2">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          Sincronizado com Banco na Nuvem
+          Conectado ao Supabase
         </div>
       </div>
 
-      <!-- Tabela de Agendamentos -->
+      <!-- Tabela -->
       <div class="bg-dark-card border border-dark-border rounded-2xl overflow-hidden shadow-2xl">
         <div class="overflow-x-auto">
           <table class="w-full text-left text-sm text-gray-300">
@@ -176,39 +175,18 @@
   </div>
 
   <script>
-    // =========================================================================
-    // CONFIGURAÇÕES DO CLIENTE (PREENCHA APENAS ESTAS VARIÁVEIS)
-    // =========================================================================
-    const CLIENT_CONFIG = {
-      barbeariaNome: "NOME DA BARBEARIA",
-      supabaseUrl: "https://SEU_PROJETO.supabase.co",
-      supabaseAnonKey: "SUA_CHAVE_ANON_KEY"
-    };
+    // --- CREDENCIAIS REAIS DO SEU SUPABASE ---
+    const SUPABASE_URL = "https://jdwcncjutafxmeswdnci.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impkd2NuY2p1dGFmeG1lc3dkbmNpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcwMDM2MzAsImV4cCI6MjEwMjU3OTYzMH0.v0rlWhCqKB3zQ6DSRvLz4ninRMfyYqoVYDd5BUjJAl8";
 
-    // Aplica o nome configurado na interface
-    document.getElementById("brandTitleLogin").innerText = CLIENT_CONFIG.barbeariaNome;
-    document.getElementById("brandTitleHeader").innerText = CLIENT_CONFIG.barbeariaNome;
-
-    // Inicializa o cliente do Supabase
-    const supabaseClient = (CLIENT_CONFIG.supabaseAnonKey !== "SUA_CHAVE_ANON_KEY")
-      ? window.supabase.createClient(CLIENT_CONFIG.supabaseUrl, CLIENT_CONFIG.supabaseAnonKey)
-      : null;
-
+    const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     let agendamentosCache = [];
 
     document.addEventListener("DOMContentLoaded", checkSession);
 
-    // 1. Verifica se o usuário já possui sessão ativa
     async function checkSession() {
       const loginScreen = document.getElementById("loginScreen");
       const adminPanel = document.getElementById("adminPanel");
-
-      if (!supabaseClient) {
-        // Modo Demonstração (Caso ainda não tenha colocado as chaves)
-        loginScreen.classList.remove("hidden");
-        adminPanel.classList.add("hidden");
-        return;
-      }
 
       const { data: { session } } = await supabaseClient.auth.getSession();
 
@@ -223,18 +201,12 @@
       }
     }
 
-    // 2. Login com Supabase Auth
     async function handleLogin(e) {
       e.preventDefault();
       const email = document.getElementById("loginEmail").value.trim();
       const password = document.getElementById("loginPassword").value.trim();
       const errorBox = document.getElementById("loginError");
       const btnLogin = document.getElementById("btnLogin");
-
-      if (!supabaseClient) {
-        alert("Atenção: Configure as credenciais do Supabase no CLIENT_CONFIG deste arquivo.");
-        return;
-      }
 
       btnLogin.disabled = true;
       btnLogin.innerText = "Autenticando...";
@@ -244,7 +216,7 @@
 
       if (error) {
         errorBox.classList.remove("hidden");
-        errorBox.innerText = "E-mail ou senha inválidos!";
+        errorBox.innerText = "E-mail ou senha incorretos: " + error.message;
         btnLogin.disabled = false;
         btnLogin.innerText = "Entrar no Sistema";
       } else {
@@ -252,13 +224,11 @@
       }
     }
 
-    // 3. Logout
     async function handleLogout() {
-      if (supabaseClient) await supabaseClient.auth.signOut();
+      await supabaseClient.auth.signOut();
       checkSession();
     }
 
-    // 4. Carrega registros do banco
     async function carregarAgendamentos() {
       const tbody = document.getElementById("appointmentsTableBody");
       tbody.innerHTML = `
@@ -270,15 +240,6 @@
         </tr>
       `;
 
-      if (!supabaseClient) {
-        // Carrega LocalStorage em caso de teste local sem Supabase
-        const local = localStorage.getItem('barbearia_appointments');
-        agendamentosCache = local ? JSON.parse(local) : [];
-        atualizarMetricas();
-        filtrarTabela();
-        return;
-      }
-
       const { data, error } = await supabaseClient
         .from('agendamentos')
         .select('*')
@@ -286,7 +247,7 @@
         .order('hora_agendamento', { ascending: true });
 
       if (error) {
-        tbody.innerHTML = `<tr><td colspan="6" class="py-8 text-center text-red-400">Erro ao consultar: ${error.message}</td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="6" class="py-8 text-center text-red-400">Erro ao consultar banco: ${error.message}</td></tr>`;
         return;
       }
 
@@ -295,7 +256,6 @@
       filtrarTabela();
     }
 
-    // 5. Atualiza totais nos cards
     function atualizarMetricas() {
       document.getElementById("metricTotal").innerText = agendamentosCache.length;
       document.getElementById("metricPendentes").innerText = agendamentosCache.filter(a => a.status === 'pendente').length;
@@ -308,7 +268,6 @@
       document.getElementById("metricFaturamento").innerText = `R$ ${totalFaturamento.toFixed(2).replace('.', ',')}`;
     }
 
-    // 6. Renderiza a tabela aplicando os filtros
     function filtrarTabela() {
       const filter = document.getElementById("statusFilter").value;
       const tbody = document.getElementById("appointmentsTableBody");
@@ -324,7 +283,7 @@
 
       tbody.innerHTML = listaFiltrada.map(item => {
         const phoneClean = (item.cliente_telefone || '').replace(/\D/g, '');
-        const zapLink = `https://wa.me/55${phoneClean}?text=${encodeURIComponent('Olá ' + item.cliente_nome + ', confirmamos o seu agendamento na barbearia para ' + formatarData(item.data_agendamento) + ' às ' + item.hora_agendamento + '!')}`;
+        const zapLink = `https://wa.me/55${phoneClean}?text=${encodeURIComponent('Olá ' + item.cliente_nome + ', confirmamos o seu agendamento para ' + formatarData(item.data_agendamento) + ' às ' + item.hora_agendamento + '!')}`;
 
         const statusColors = {
           pendente: 'bg-yellow-500/10 text-yellow-400 border-yellow-500/30',
@@ -370,18 +329,15 @@
       }).join('');
     }
 
-    // 7. Atualiza Status
     async function atualizarStatus(id, novoStatus) {
-      if (supabaseClient) {
-        const { error } = await supabaseClient
-          .from('agendamentos')
-          .update({ status: novoStatus })
-          .eq('id', id);
+      const { error } = await supabaseClient
+        .from('agendamentos')
+        .update({ status: novoStatus })
+        .eq('id', id);
 
-        if (error) {
-          alert("Erro ao atualizar: " + error.message);
-          return;
-        }
+      if (error) {
+        alert("Erro ao atualizar status: " + error.message);
+        return;
       }
 
       const item = agendamentosCache.find(a => a.id === id);
@@ -390,20 +346,17 @@
       filtrarTabela();
     }
 
-    // 8. Deleta Agendamento
     async function deletarAgendamento(id) {
-      if (!confirm("Tem certeza que deseja excluir este agendamento permanentemente?")) return;
+      if (!confirm("Deseja realmente remover este agendamento?")) return;
 
-      if (supabaseClient) {
-        const { error } = await supabaseClient
-          .from('agendamentos')
-          .delete()
-          .eq('id', id);
+      const { error } = await supabaseClient
+        .from('agendamentos')
+        .delete()
+        .eq('id', id);
 
-        if (error) {
-          alert("Erro ao deletar: " + error.message);
-          return;
-        }
+      if (error) {
+        alert("Erro ao excluir: " + error.message);
+        return;
       }
 
       agendamentosCache = agendamentosCache.filter(a => a.id !== id);
