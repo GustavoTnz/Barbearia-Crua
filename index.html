@@ -400,8 +400,8 @@
     <script>
         AOS.init({ duration: 800, once: true, offset: 80 });
 
-        // --- CREDENCIAIS DIRETAS DO SUPABASE ---
-        const SUPABASE_API = "https://jdwcncjutafxmeswdnci.supabase.co/rest/v1";
+        // --- CREDENCIAIS DO SUPABASE ---
+        const SUPABASE_BASE_URL = "https://jdwcncjutafxmeswdnci.supabase.co";
         const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impkd2NuY2p1dGFmeG1lc3dkbmNpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcwMDM2MzAsImV4cCI6MjEwMjU3OTYzMH0.v0rlWhCqKB3zQ6DSRvLz4ninRMfyYqoVYDd5BUjJAl8";
         const BARBER_PHONE = "5575992143663";
 
@@ -514,6 +514,7 @@
             await carregarChipsDeHorarios(isoDate);
         }
 
+        // BUSCA SEGURA DE HORÁRIOS VIA RPC (Sem vazamento de dados de outros clientes)
         async function carregarChipsDeHorarios(date) {
             const barber = document.getElementById('custBarber').value;
             const container = document.getElementById('timeSlotsContainer');
@@ -527,12 +528,17 @@
 
             let horasOcupadas = new Set();
             try {
-                const url = `${SUPABASE_API}/agendamentos?select=hora_agendamento&data_agendamento=eq.${date}&barbeiro=eq.${encodeURIComponent(barber)}&status=neq.cancelado`;
-                const response = await fetch(url, {
+                const response = await fetch(`${SUPABASE_BASE_URL}/rest/v1/rpc/get_horarios_ocupados`, {
+                    method: 'POST',
                     headers: {
                         'apikey': SUPABASE_KEY,
-                        'Authorization': `Bearer ${SUPABASE_KEY}`
-                    }
+                        'Authorization': `Bearer ${SUPABASE_KEY}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        data_busca: date,
+                        barbeiro_busca: barber
+                    })
                 });
 
                 if (response.ok) {
@@ -650,7 +656,7 @@
             const formattedDate = `${day}/${month}/${year}`;
 
             try {
-                const dbResponse = await fetch(`${SUPABASE_API}/agendamentos`, {
+                const dbResponse = await fetch(`${SUPABASE_BASE_URL}/rest/v1/agendamentos`, {
                     method: 'POST',
                     headers: {
                         'apikey': SUPABASE_KEY,
@@ -666,19 +672,23 @@
                         data_agendamento: date,
                         hora_agendamento: time,
                         valor: total,
-                        status: "pendente"
+                        status: "confirmado" // Gravado diretamente como confirmado
                     })
                 });
 
                 if (!dbResponse.ok) {
-                    const errorText = await dbResponse.text();
-                    throw new Error(errorText || "Falha ao gravar registro.");
+                    const errorJson = await dbResponse.json().catch(() => null);
+                    if (errorJson && errorJson.code === '23505') {
+                        throw new Error("Este horário acabou de ser preenchido. Por favor, selecione outro.");
+                    }
+                    throw new Error(errorJson ? errorJson.message : "Falha ao gravar registro.");
                 }
             } catch (err) {
                 alert("Erro ao gravar agendamento: " + err.message);
                 document.getElementById('btnText').classList.remove('hidden');
                 document.getElementById('btnLoading').classList.add('hidden');
                 document.getElementById('submitBtn').disabled = false;
+                carregarChipsDeHorarios(date);
                 return;
             }
 
